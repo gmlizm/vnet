@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration debug="false" scan="true" scanPeriod="30 seconds">
+    <property name="APP_NAME" value="vnet" />
+    <property name="DEPLOY_DIR" value="/mnt/deploy" />
+    <property name="LOG_PREFIX" value="${DEPLOY_DIR}/logs/log-${APP_NAME}" />
+    
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] [%-5level] [%C{16}.%method] -> %msg%n</pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+	</appender>
+
+	<appender name="LOGALL" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_PREFIX}-today-all.log</file>
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] [%-5level] [%C{16}.%method] -> %msg%n</pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${LOG_PREFIX}-%d{yyyyMMdd}.log</fileNamePattern>
+			<maxHistory>3</maxHistory>
+		</rollingPolicy>
+	</appender>
+
+	<appender name="LOGCORE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_PREFIX}-today-core.log</file>
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] [%-5level] [%C{16}.%method] -> %msg%n</pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${LOG_PREFIX}-%d{yyyyMMdd}-core.log</fileNamePattern>
+			<maxHistory>3</maxHistory>
+		</rollingPolicy>
+	</appender>
+
+	<appender name="LOGSERVICE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_PREFIX}-today-service.log</file>
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] [%-5level] [%C{16}.%method] -> %msg%n</pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${LOG_PREFIX}-%d{yyyyMMdd}-service.log
+			</fileNamePattern>
+			<maxHistory>3</maxHistory>
+		</rollingPolicy>
+	</appender>
+
+	<appender name="LOGWEB" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${LOG_PREFIX}-today-web.log</file>
+		<encoder>
+			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] [%-5level] [%C{16}.%method] -> %msg%n</pattern>
+			<charset>UTF-8</charset>
+		</encoder>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>${LOG_PREFIX}-%d{yyyyMMdd}-web.log
+			</fileNamePattern>
+			<maxHistory>3</maxHistory>
+		</rollingPolicy>
+	</appender>
+
+    <logger name="com.aboo.vnet.core" level="INFO" additivity="false">
+        <appender-ref ref="LOGCORE" />
+    </logger>
+	<logger name="com.aboo.vnet.service" level="INFO" additivity="false">
+		<appender-ref ref="LOGSERVICE" />
+	</logger>
+	<logger name="com.aboo.vnet.web" level="INFO"  additivity="false">
+		<appender-ref ref="LOGWEB" />
+	</logger>
+	
+	<logger name="com.aboo.vnet" level="INFO" additivity="true" />
+	<logger name="jdbc.sqltiming" level="INFO" additivity="true" />
+	<logger name="org" level="ERROR" additivity="true" />
+    <logger name="com" level="ERROR" additivity="true" />
+    <logger name="net" level="ERROR" additivity="true" />
+    <logger name="springfox" level="ERROR" additivity="true" />
+	<root level="INFO">
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="LOGALL" />
+	</root>
+</configuration>

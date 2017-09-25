@@ -1,0 +1,60 @@
+description = "The Aboo-Vnet Project"
+defaultTasks "clean", "build"
+
+buildscript {
+  repositories {
+    mavenLocal()
+    maven { url "http://repo.spring.io" }
+    mavenCentral()
+  }
+  dependencies {
+    classpath "org.springframework.boot:spring-boot-gradle-plugin:1.5.7.RELEASE"
+  }
+}
+
+allprojects{
+  group="com.aboo"
+	version = "1.0.0"
+}
+
+subprojects {
+  repositories {
+    mavenLocal()
+    mavenCentral()
+    maven { url "http://repo.spring.io" }
+	}
+  
+  ext{
+    scriptDir="${rootProject.projectDir}/script"
+    commonsLangVersion="3.3.2"
+    logbackVersion="1.1.7"
+    hikariCPVersion="2.5.1"
+    mysqlConnectorVersion="5.1.40"
+    springfoxSwagger2Version="2.7.0"
+    poiVersion="3.15"
+    lowagieItextVersion="4.2.1"
+    jacksonVersion="2.8.1"
+    orgjsonVersion="20160810"
+    urlrewritefilterVersion="4.0.4"
+  }
+
+  apply from: "${scriptDir}/java.gradle"
+  apply from: "${scriptDir}/osgi.gradle"
+  apply from: "${scriptDir}/springBoot.gradle"
+  //apply from: "${scriptDir}/checkstyle.gradle"
+  //apply from: "${scriptDir}/findbugs.gradle"
+  apply from: "${scriptDir}/pmd.gradle"
+  apply from: "${scriptDir}/eclipse.gradle"
+
+  //dependency management
+  dependencyManagement {
+      imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:Dalston.SR3"
+      }
+    }
+}
+
+/* gradle wrapper */
+task wrapper(type: Wrapper) {
+  gradleVersion = "3.5"
+}

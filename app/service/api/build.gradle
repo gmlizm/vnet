@@ -1,0 +1,6 @@
+dependencies {
+	//compile 'groupId:artifactId:version'
+	compile "io.springfox:springfox-swagger2:${springfoxSwagger2Version}"
+	compile "io.springfox:springfox-swagger-ui:${springfoxSwagger2Version}"
+}
+apply from: "${scriptDir}/maven-publish.gradle"

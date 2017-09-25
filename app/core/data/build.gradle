@@ -1,0 +1,15 @@
+dependencies {
+    runtime project(":$rootProject.name-common-util")
+    compile "com.zaxxer:HikariCP:${hikariCPVersion}"
+    compile "mysql:mysql-connector-java:${mysqlConnectorVersion}"
+    compile ("org.mybatis.spring.boot:mybatis-spring-boot-starter:1.1.1"){
+        exclude group:"org.apache.tomcat",module:"tomcat-jdbc"
+        exclude group:"org.apache.tomcat",module:"tomcat-juli"
+    }
+    compile "org.springframework.boot:spring-boot-starter-data-redis"
+//    compile "org.springframework.boot:spring-boot-starter-data-rest"
+//    compile "org.springframework.boot:spring-boot-starter-data-gemfire"
+//    compile "org.springframework.boot:spring-boot-starter-data-solr"
+    compile "org.springframework.boot:spring-boot-starter-jta-atomikos"
+
+}

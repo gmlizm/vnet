@@ -1,0 +1,11 @@
+apply plugin: 'checkstyle'
+
+task checkstyle(type: Checkstyle) {
+  ignoreFailures = true
+  configFile = file("${rootDir}/config/checkstyle/checkstyle.xml")
+  reports {  
+    xml {  
+      destination "${rootDir}/report/checkstyle/checkresult-${project.name}.xml"  
+    }
+  }
+}
