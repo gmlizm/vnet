@@ -8,7 +8,7 @@ buildscript {
     mavenCentral()
   }
   dependencies {
-    classpath "org.springframework.boot:spring-boot-gradle-plugin:1.5.7.RELEASE"
+    classpath "org.springframework.boot:spring-boot-gradle-plugin:2.0.0.RELEASE"
   }
 }
 
@@ -22,13 +22,13 @@ subprojects {
     mavenLocal()
     mavenCentral()
     maven { url "http://repo.spring.io" }
+    maven { url 'https://repo.spring.io/libs-milestone'}
 	}
   
   ext{
     scriptDir="${rootProject.projectDir}/script"
     commonsLangVersion="3.3.2"
     logbackVersion="1.1.7"
-    hikariCPVersion="2.5.1"
     mysqlConnectorVersion="5.1.40"
     springfoxSwagger2Version="2.7.0"
     poiVersion="3.15"
@@ -49,12 +49,12 @@ subprojects {
   //dependency management
   dependencyManagement {
       imports {
-        mavenBom "org.springframework.cloud:spring-cloud-dependencies:Dalston.SR3"
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:Finchley.RC1"
       }
-    }
+  }
 }
 
 /* gradle wrapper */
 task wrapper(type: Wrapper) {
-  gradleVersion = "4.2"
+  gradleVersion = "4.6"
 }

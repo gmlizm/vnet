@@ -11,9 +11,9 @@ public class UserService {
 
 	@Autowired
 	private SysUserMapper userMapper;
-	
-	public SysUser findByName(String username){
+
+	public SysUser findByName(String username) {
 		return userMapper.findByName(username);
 	}
-	
+
 }

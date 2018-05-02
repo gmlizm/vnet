@@ -1,4 +1,4 @@
-package com.aboo.vnet.service.facade;
+package com.aboo.vnet.service.api;
 
 public interface TestService {
 	

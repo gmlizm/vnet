@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.context.request.WebRequest;
 
 import com.aboo.vnet.core.service.UserService;
-import com.aboo.vnet.service.client.tb.TbTestClient;
 
 @Controller
 public class MainController extends SysController {
@@ -23,12 +22,10 @@ public class MainController extends SysController {
 	@Autowired
 	private UserService userService;
 	
-	@Autowired
-	private TbTestClient tbTestClient;
 	
 	@RequestMapping(value = "/index.htm", method = RequestMethod.GET)
     public String index(ModelMap modelMap, WebRequest request, HttpServletResponse response) throws Exception {
-		System.out.println(tbTestClient.test());
+
 		return root(modelMap,request,response);
 	}
 

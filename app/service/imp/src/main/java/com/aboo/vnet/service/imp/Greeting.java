@@ -1,4 +1,4 @@
-package com.aboo.vnet.service.publish;
+package com.aboo.vnet.service.imp;
 
 public class Greeting {
 
