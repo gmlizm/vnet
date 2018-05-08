@@ -10,7 +10,5 @@ dependencies {
 //    compile "net.dempsy:dempsy-ringbuffer:2.0.0"
 //    compile "com.lmax:disruptor:3.3.6"
     compile "com.lambdaworks:scrypt:1.4.0"
-    compile "org.springframework.boot:spring-boot-starter"
-	testCompile "org.springframework.boot:spring-boot-starter-test"
 
 }

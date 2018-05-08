@@ -1,5 +1,5 @@
 dependencies {
-	compile project(":$rootProject.name-core-data")
+	compile project(":${rootProject.name}-core-data")
 	//compile "org.springframework.boot:spring-boot-starter-mail"
 	//compile "org.springframework.boot:spring-boot-starter-aop"
 	//compile "org.springframework.boot:spring-boot-starter-websocket"

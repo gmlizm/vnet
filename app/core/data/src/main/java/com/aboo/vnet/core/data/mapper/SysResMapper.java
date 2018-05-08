@@ -7,7 +7,7 @@ import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.ResultType;
 import org.apache.ibatis.annotations.Select;
 
-import com.aboo.vnet.core.model.SysRes;
+import com.aboo.vnet.core.data.model.SysRes;
 
 @Mapper
 public interface SysResMapper {

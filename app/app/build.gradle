@@ -4,10 +4,8 @@ bootJar {
 }
 dependencies {
 	compile project(":$rootProject.name-web-main")
-	compile project(":$rootProject.name-service-imp")
 //	compile "org.springframework.boot:spring-boot-starter-actuator"
 //	compile "org.springframework.boot:spring-boot-starter-remote-shell"
-	testCompile "org.springframework.boot:spring-boot-devtools"
 	
 }
 //apply from: "${scriptDir}/eclipse-wtp.gradle"

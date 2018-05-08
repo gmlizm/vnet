@@ -1,39 +1,39 @@
-/* ********************sysName******************** */
-def sysName=rootProject.name='vnet'
+/* ********************{rootProject.name}******************** */
+rootProject.name='vnet'
 
 /* ========================================================== */
 /* ====================== projects ======================= */
 /* ========================================================== */
 
 /* ********************sys-app******************** */
-include "$sysName-app"
-project(":$sysName-app").projectDir=new File(settingsDir,'app/app')
+include "${rootProject.name}-app"
+project(":${rootProject.name}-app").projectDir=new File(rootDir,'app/app')
 
 /* ********************common-util******************** */
-include "$sysName-common-util"
-project(":$sysName-common-util").projectDir=new File(settingsDir,'app/common/util')
+include "${rootProject.name}-common-util"
+project(":${rootProject.name}-common-util").projectDir=new File(rootDir,'app/common/util')
 
 /* ********************data-dao******************** */
-include "$sysName-core-data"
-project(":$sysName-core-data").projectDir=new File(settingsDir,'app/core/data')
+include "${rootProject.name}-core-data"
+project(":${rootProject.name}-core-data").projectDir=new File(rootDir,'app/core/data')
 
 /* ********************core-service******************** */
-include "$sysName-core-service"
-project(":$sysName-core-service").projectDir=new File(settingsDir,'app/core/service')
+include "${rootProject.name}-core-service"
+project(":${rootProject.name}-core-service").projectDir=new File(rootDir,'app/core/service')
 
 /* ********************service-api******************** */
-include "$sysName-service-api"
-project(":$sysName-service-api").projectDir=new File(settingsDir,'app/service/api')
+include "${rootProject.name}-service-api"
+project(":${rootProject.name}-service-api").projectDir=new File(rootDir,'app/service/api')
 
 /* ********************service-imp******************** */
-include "$sysName-service-imp"
-project(":$sysName-service-imp").projectDir=new File(settingsDir,'app/service/imp')
+include "${rootProject.name}-service-imp"
+project(":${rootProject.name}-service-imp").projectDir=new File(rootDir,'app/service/imp')
 
 /* ********************service-ref******************** */
-include "$sysName-service-ref"
-project(":$sysName-service-ref").projectDir=new File(settingsDir,'app/service/ref')
+include "${rootProject.name}-service-ref"
+project(":${rootProject.name}-service-ref").projectDir=new File(rootDir,'app/service/ref')
 
 /* ********************web-main******************** */
-include "$sysName-web-main"
-project(":$sysName-web-main").projectDir=new File(settingsDir,'app/web/main')
+include "${rootProject.name}-web-main"
+project(":${rootProject.name}-web-main").projectDir=new File(rootDir,'app/web/main')
 

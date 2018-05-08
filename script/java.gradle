@@ -1,36 +1,34 @@
-apply plugin: 'java'
-//sourceCompatibility = 1.6
-//targetCompatibility = 1.6
-// ±àÒëÆ÷Ñ¡Ïî ²»ÖªÎªÊ²Ã´±¨´í 
+apply plugin: "java"
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+// ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ñ¡ï¿½ï¿½ ï¿½ï¿½ÖªÎªÊ²Ã´ï¿½ï¿½ï¿½ï¿½ 
 // tasks.withType(Compile) {
-//   options.encoding = 'utf-8'
+//   options.encoding = "utf-8"
 // }
 
-compileJava {
-  options.encoding='utf-8'
-}
+[compileJava,compileTestJava,javadoc]*.options*.encoding = "UTF-8"
 jar {
-  dependsOn 'sourcesJar' //, 'docZip'
+  dependsOn "sourcesJar" //, "docZip"
   task sourcesJar(type: Jar) {  
-    classifier='sources'  
+    classifier="sources"  
     from sourceSets.main.allSource  
   }
   task docZip(type: Jar, dependsOn: javadoc) {
-    classifier = 'javadoc'
+    classifier = "javadoc"
     from javadoc.destinationDir
   }
 }
 javadoc {
   options {
     encoding "UTF-8"
-    charSet 'UTF-8'
+    charSet "UTF-8"
     author true
     version true
     links "http://www.aboo.com"
   }
 }
 clean{
-  dependsOn 'delTarget'
+  dependsOn "delTarget"
   task delTarget(type: Delete) {
     delete "${projectDir}/bin"
   }

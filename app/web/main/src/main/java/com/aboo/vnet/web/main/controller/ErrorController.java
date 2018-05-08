@@ -4,8 +4,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.aboo.vnet.core.model.SysUser;
-
 @Controller
 //@RequestMapping("/error")
 public class ErrorController {
@@ -18,28 +16,28 @@ public class ErrorController {
 	
 	@RequestMapping("/testview.xlsx")
 	public String testxlsx(Model model){
-		SysUser user = new SysUser();
-		user.setUid(1L);
-		user.setUsername("admin");
-		model.addAttribute("user", user);
+//		SysUser user = new SysUser();
+//		user.setUid(1L);
+//		user.setUsername("admin");
+//		model.addAttribute("user", user);
 		return "xlsxView";
 	}
 	
 	@RequestMapping("/testview.xls")
 	public String testxls(Model model){
-		SysUser user = new SysUser();
-		user.setUid(1L);
-		user.setUsername("admin");
-		model.addAttribute("user", user);
+//		SysUser user = new SysUser();
+//		user.setUid(1L);
+//		user.setUsername("admin");
+//		model.addAttribute("user", user);
 		return "xlsView";
 	}
 	
 	@RequestMapping("/testview.pdf")
 	public String testpdf(Model model){
-		SysUser user = new SysUser();
-		user.setUid(1L);
-		user.setUsername("admin");
-		model.addAttribute("user", user);
+//		SysUser user = new SysUser();
+//		user.setUid(1L);
+//		user.setUsername("admin");
+//		model.addAttribute("user", user);
 		return "pdfView";
 	}
 	

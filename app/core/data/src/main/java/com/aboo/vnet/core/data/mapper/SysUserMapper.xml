@@ -4,8 +4,4 @@
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.aboo.vnet.core.data.mapper.SysUserMapper">
 
-	<select id="findByName" resultType="com.aboo.vnet.core.model.SysUser">
-		select uid, username, password from sys_user WHERE username = #{username}
-	</select>
-
 </mapper>   

@@ -4,9 +4,10 @@ import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
-import com.aboo.vnet.core.model.SysUser;
+import com.aboo.vnet.core.data.model.SysUser;
 
 @Mapper
 public interface SysUserMapper {
@@ -24,7 +25,6 @@ public interface SysUserMapper {
     void update(SysUser user);
     
     // Find by Parameter
-    //@Select("select max_connections as id,user as uname from user WHERE user = #{uname}")
-//    @Qualifier("msql2DataSource")
+    @Select("select max_connections as id,user as uname from user WHERE user = #{uname}")
     public SysUser findByName(@Param("username") String username);
 }

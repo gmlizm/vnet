@@ -6,26 +6,20 @@ import java.util.Map;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.context.request.WebRequest;
 
-import com.aboo.vnet.core.service.UserService;
-
 @Controller
-public class MainController extends SysController {
+public class MainController {
 	
-	
-	@Autowired
-	private UserService userService;
 	
 	
 	@RequestMapping(value = "/index.htm", method = RequestMethod.GET)
     public String index(ModelMap modelMap, WebRequest request, HttpServletResponse response) throws Exception {
-
+		
 		return root(modelMap,request,response);
 	}
 

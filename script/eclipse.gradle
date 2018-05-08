@@ -2,7 +2,7 @@ apply plugin: 'eclipse'
 eclipse {
   //sourceSets*.java.srcDirs*.each {if(!it.exists()){it.mkdirs()}}
   //sourceSets*.resources.srcDirs*.each {if(!it.exists()){it.mkdirs()}}
-  //Ö»ÅÐ¶ÏmainÏÂÃæµÄ×ÊÔ´ÎÄ¼þ¼Ð
+  //Ö»ï¿½Ð¶ï¿½mainï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ô´ï¿½Ä¼ï¿½ï¿½ï¿½
   sourceSets.main.java.srcDirs.each {if(!it.exists()){it.mkdirs()}}
   sourceSets.main.resources.srcDirs.each {if(!it.exists()){it.mkdirs()}}
   classpath {
