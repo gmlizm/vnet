@@ -14,7 +14,6 @@ public class TestController {
 	
 	@RequestMapping("/stest")
 	public String test() {
-		String ss = userService.test();
-		return ss;
+		return "44";
 	}
 }

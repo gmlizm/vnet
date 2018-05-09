@@ -1,13 +1,19 @@
-bootJar {
-    enabled=true
-    mainClassName = 'com.aboo.vnet.Application'
-}
 dependencies {
 	compile project(":$rootProject.name-web-main")
+	
 //	compile "org.springframework.boot:spring-boot-starter-actuator"
 //	compile "org.springframework.boot:spring-boot-starter-remote-shell"
+    compile "org.springframework.boot:spring-boot-starter"
+    
+	testCompile "org.springframework.boot:spring-boot-starter-test"
+    testCompile "org.springframework.boot:spring-boot-devtools"
 	
 }
+apply from: "${scriptDir}/springBoot.gradle"
+bootJar {
+    mainClassName = 'com.aboo.vnet.Application'
+}
+
 //apply from: "${scriptDir}/eclipse-wtp.gradle"
 apply from: "${scriptDir}/war.gradle"
 //apply from: "${scriptDir}/jetty.gradle"

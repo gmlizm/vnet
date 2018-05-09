@@ -15,5 +15,5 @@ dependencies {
 	//compile "org.apache.poi:poi:${poiVersion}"
 	//compile "org.apache.poi:poi-ooxml:${poiVersion}"
 	//compile "org.apache.poi:poi-ooxml-schemas:${poiVersion}"
-	compile "org.tuckey:urlrewritefilter:${urlrewritefilterVersion}"
+	//compile "org.tuckey:urlrewritefilter:${urlrewritefilterVersion}"
 }

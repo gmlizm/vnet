@@ -1,12 +1,13 @@
 apply plugin: "java"
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
-// ������ѡ�� ��֪Ϊʲô���� 
+//
 // tasks.withType(Compile) {
 //   options.encoding = "utf-8"
 // }
 
 [compileJava,compileTestJava,javadoc]*.options*.encoding = "UTF-8"
+
 jar {
   dependsOn "sourcesJar" //, "docZip"
   task sourcesJar(type: Jar) {  

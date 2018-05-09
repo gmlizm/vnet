@@ -2,18 +2,14 @@ description = "The Aboo-Vnet Project"
 defaultTasks "clean", "build"
 
 buildscript {
-  ext {
-    springboot_version = "2.0.0.RELEASE"
-    //kotlin_version = "1.1.0"
-  }
   repositories {
     mavenLocal()
-    mavenCentral()
     maven { url "http://repo.spring.io" }
+    mavenCentral()
   }
   dependencies {
-    classpath "org.springframework.boot:spring-boot-gradle-plugin:${springboot_version}"
-    //classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${kotlin_version}"
+    classpath "org.springframework.boot:spring-boot-gradle-plugin:2.0.0.RELEASE"
+    //classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.1.0"
   }
 }
 
@@ -27,15 +23,14 @@ subprojects {
     mavenLocal()
     mavenCentral()
     maven { url "http://repo.spring.io" }
-    maven { url 'https://repo.spring.io/libs-milestone'}
+    maven { url "http://repo.spring.io/libs-snapshot" }
+    maven { url "https://repo.spring.io/libs-milestone" }
 	}
   
   ext{
     scriptDir="${rootProject.projectDir}/script"
-    commonsLangVersion="3.3.2"
     logbackVersion="1.1.7"
     mysqlConnectorVersion="5.1.40"
-    springfoxSwagger2Version="2.7.0"
     poiVersion="3.15"
     lowagieItextVersion="4.2.1"
     jacksonVersion="2.8.1"
@@ -45,24 +40,22 @@ subprojects {
 
   apply from: "${scriptDir}/java.gradle"
   //apply from: "${scriptDir}/kotlin.gradle"
+  apply from: "${scriptDir}/springBootDependency.gradle"
   apply from: "${scriptDir}/osgi.gradle"
-  apply from: "${scriptDir}/springBoot.gradle"
   //apply from: "${scriptDir}/checkstyle.gradle"
   //apply from: "${scriptDir}/findbugs.gradle"
   //apply from: "${scriptDir}/pmd.gradle"
   apply from: "${scriptDir}/eclipse.gradle"
 
-  //dependency management
+  // dependency management
   dependencyManagement {
       imports {
-        mavenBom "org.springframework.cloud:spring-cloud-dependencies:Finchley.RC1"
+        mavenBom org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES
+        //mavenBom "org.springframework.cloud:spring-cloud-dependencies:Finchley.RC1"
       }
   }
-  
+  // dependencies
   dependencies {
-    compile "org.springframework.boot:spring-boot-starter"
-	testCompile "org.springframework.boot:spring-boot-starter-test"
-    testCompile "org.springframework.boot:spring-boot-devtools"
     compile "org.projectlombok:lombok:1.16.20"
   }
 
