@@ -1,8 +1,8 @@
-apply plugin: 'war'
+apply plugin: "war"
 //webAppDirName='src/main/webapp' default
 assemble {
-	dependsOn 'copyDepends', 'copyCore', 'copyWar'
-	task copyDepends(type: Copy) {
+	//dependsOn 'copyDepends', 'copyCore', 'copyWar'
+	/*task copyDepends(type: Copy) {
 			from configurations.runtime
 			into "${project.buildDir}/depends/libs"
 			exclude "${rootProject.name}*.jar"
@@ -11,16 +11,19 @@ assemble {
 			from configurations.runtime
 			into "${project.buildDir}/depends/core"
 			include "${rootProject.name}*.jar"
-	}
+	}*/
+	dependsOn "copyWar"
 	task copyWar(type: Copy) {
 			dependsOn 'war'
 			from libsDir
-			into "${rootDir}/z-dist"
+			into "${rootDir}/zpkg"
+			rename {String fileName -> fileName.replace("$project.name", "$rootProject.name")}
 	}
 }
-war{
+war {
+  archiveName="${rootProject.name}.${extension}"
   from("${projectDir}") {
     include "templates/*.*","templates/*/**.*"  
-  } 
-	archiveName="${rootProject.name}.${extension}"
+  }
+  destinationDir = file("${rootDir}/zpkg")  
 }

@@ -31,6 +31,6 @@ javadoc {
 clean{
   dependsOn "delTarget"
   task delTarget(type: Delete) {
-    delete "${projectDir}/bin"
+    delete "${projectDir}/bin", "${rootDir}/zpkg"
   }
 }
