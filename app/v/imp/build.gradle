@@ -1,0 +1,13 @@
+dependencies {
+    compile project(":$rootProject.name-serv")
+    compile project(":$rootProject.name-v-api")
+    compile project(":$rootProject.name-v-ref")
+    
+    compile "org.springframework.boot:spring-boot-starter-web-services"
+    compile "jaxen:jaxen"
+    compile "org.jdom:jdom2"
+    compile "wsdl4j:wsdl4j"
+    
+    //compile "org.apache.cxf:cxf-spring-boot-starter-jaxws:3.1.12"
+    //compile "org.apache.cxf:cxf-spring-boot-starter-jaxrs:3.1.12"
+}
