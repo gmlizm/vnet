@@ -1,5 +1,5 @@
 dependencies {
-	compile project(":$rootProject.name-web-main")
+	compile project(":$rootProject.name-web")
 	
 //	compile "org.springframework.boot:spring-boot-starter-actuator"
 //	compile "org.springframework.boot:spring-boot-starter-remote-shell"

@@ -5,35 +5,35 @@ rootProject.name='vnet'
 /* ====================== projects ======================= */
 /* ========================================================== */
 
-/* ********************sys-app******************** */
+/* ********************app-app******************** */
 include "${rootProject.name}-app"
 project(":${rootProject.name}-app").projectDir=new File(rootDir,'app/app')
 
-/* ********************common-util******************** */
-include "${rootProject.name}-common-util"
-project(":${rootProject.name}-common-util").projectDir=new File(rootDir,'app/common/util')
+/* ********************app-base******************** */
+include "${rootProject.name}-base"
+project(":${rootProject.name}-base").projectDir=new File(rootDir,'app/base')
 
-/* ********************data-dao******************** */
-include "${rootProject.name}-core-data"
-project(":${rootProject.name}-core-data").projectDir=new File(rootDir,'app/core/data')
+/* ********************app-data******************** */
+include "${rootProject.name}-data"
+project(":${rootProject.name}-data").projectDir=new File(rootDir,'app/data')
 
-/* ********************core-service******************** */
-include "${rootProject.name}-core-service"
-project(":${rootProject.name}-core-service").projectDir=new File(rootDir,'app/core/service')
+/* ********************app-serv******************** */
+include "${rootProject.name}-serv"
+project(":${rootProject.name}-serv").projectDir=new File(rootDir,'app/serv')
 
-/* ********************service-api******************** */
-include "${rootProject.name}-service-api"
-project(":${rootProject.name}-service-api").projectDir=new File(rootDir,'app/service/api')
+/* ********************app-v-api******************** */
+include "${rootProject.name}-v-api"
+project(":${rootProject.name}-v-api").projectDir=new File(rootDir,'app/v/api')
 
-/* ********************service-imp******************** */
-include "${rootProject.name}-service-imp"
-project(":${rootProject.name}-service-imp").projectDir=new File(rootDir,'app/service/imp')
+/* ********************app-v-imp******************** */
+include "${rootProject.name}-v-imp"
+project(":${rootProject.name}-v-imp").projectDir=new File(rootDir,'app/v/imp')
 
 /* ********************service-ref******************** */
-include "${rootProject.name}-service-ref"
-project(":${rootProject.name}-service-ref").projectDir=new File(rootDir,'app/service/ref')
+include "${rootProject.name}-v-ref"
+project(":${rootProject.name}-v-ref").projectDir=new File(rootDir,'app/v/ref')
 
 /* ********************web-main******************** */
-include "${rootProject.name}-web-main"
-project(":${rootProject.name}-web-main").projectDir=new File(rootDir,'app/web/main')
+include "${rootProject.name}-web"
+project(":${rootProject.name}-web").projectDir=new File(rootDir,'app/web')
 

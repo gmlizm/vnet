@@ -1,5 +1,0 @@
-dependencies {
-    compile project(":$rootProject.name-common-util")
-    //compile files("$rootDir/third-libs/taobao-sdk-java-23620627.jar")
-    
-}

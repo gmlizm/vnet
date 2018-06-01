@@ -1,4 +1,0 @@
-dependencies {
-	//compile 'groupId:artifactId:version'
-}
-apply from: "${scriptDir}/maven-publish.gradle"
